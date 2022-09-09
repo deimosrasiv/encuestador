@@ -1,0 +1,17 @@
+/* NUEVO INICIO CSS desplegable de segundo nivel */
+.dropdown-submenu{posición: relativo;}
+.dropdown-submenu .caret{-webkit-transform: rotar (-90 grados); transformar: rotar (-90 grados);}
+.menú desplegable > .menú desplegable {superior: 0; izquierda: 100%; margen-superior:-6px; margen izquierdo:-1px;}
+.dropdown-submenu.open > a:después{border-left-color:#fff;}
+.dropdown-submenu.open > .dropdown-menu, .dropdown-submenu.open > .dropdown-menu {display: block;}
+.dropdown-submenu .dropdown-menu{margin-bottom: 8px;}
+.navbar-default .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color: #f6f6f6;}
+.navbar-inverse .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color:#333;}
+.navbar .navbar-nav .open .dropdown-submenu .dropdown-menu > li > a{padding-left: 30px;}
+@pantalla multimedia y (ancho mínimo: 992 px){
+    .dropdown-submenu .dropdown-menu{margin-bottom: 2px;}
+    .navbar .navbar-nav .open .dropdown-submenu .dropdown-menu > li > a{padding-left: 25px;}
+    .navbar-default .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color:#fff;}
+    .navbar-inverse .navbar-nav .open .dropdown-menu .dropdown-submenu ul{background-color:#fff;}
+}
+/* NUEVO FIN CSS desplegable de segundo nivel */

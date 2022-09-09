@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Pizarra de Comentarios</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+
+
+
+
+  
+  <!-- Coneccion a Firefase -->
+ <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+  <!-- *** -->
+
+  <!-- Mi CSS -->
+     
+     <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/selectFX/css/cs-skin-elastic.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+  <!-- *** -->
+
+	<title>Pizarra</title>
+
+<style type="text/css">
+    .affix {
+  top: 0;
+  width: 100%;
+}
+
+.affix + .container-fluid {
+  padding-top: 0px;
+}
+</style>
+
+	
+
+</head>
+<body onload="mueveReloj()">
+
+<div class="col-md-12 col-lg-12">
+    <div class="card bg-flat-color-1 text-light">
+           <div class="container-fluid">
+                <div class="row" style="float:right;">
+                    <div id="fechadia" style="font-size:15px;" class="text-white bg mr-4">
+                    </div>
+
+                    <div id="reloj" style="font-size:15px;" class="text-white bg mr-4">
+                    </div>
+                </div>
+            
+            </div>
+                        
+        </div>
+</div>
+
+<div class="container-fluid">
+	
+            <div class="col-md-4 col-lg-4">
+                <div class="card bg-flat-color-5 text-light">
+                    <div class="card-header">
+
+                        <div style="font-size:25px; text-align: center;">Felicitaciones</div>
+                            
+                    </div>
+
+                    <div id="box_felicita" class="card-body" style="height: 800px; overflow-y: scroll;">
+
+
+                        
+                        
+
+
+
+                    </div>
+                </div>
+            </div>
+        
+
+            <div class="col-md-4 col-lg-4">
+                 <div class="card bg-flat-color-3 text-light">
+                    <div class="card-header">
+                       <div style="font-size:25px; text-align: center;">Sugerencias</div>
+                    </div>
+                    <div id="box_sugiere" class="card-body" style="height: 800px; overflow-y: scroll;">
+                        
+                       
+
+
+                   
+                    </div>
+                </div>
+            </div>
+        
+
+            <div class="col-md-4 col-lg-4">
+                <div class="card bg-flat-color-4 text-light">
+                    <div class="card-header">
+                        <div style="font-size:25px; text-align: center;">Reclamos</div>
+                    </div>
+                    <div id="box_reclama" class="card-body" style="height: 800px; overflow-y: scroll;">
+
+                        
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- Optional JavaScript  -->
+      <script src="js/app_pizarra.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

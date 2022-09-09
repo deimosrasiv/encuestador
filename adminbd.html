@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- Libreria -->
+    <!-- Coneccion a JQuery -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <!-- *** -->
+    <!-- Coneccion a Firefase -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+    <!-- *** -->
+    <!-- Mi CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap_cerulean.min.css">
+    <link rel="stylesheet" href="css/main.css"> <!-- Barra de Rss-->
+    <!--    <link rel="stylesheet" href="css/menu.css"> MANEJO DE MENU  -->
+    <!-- *** -->
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+    <!-- MANEJO DE FECHA  -->
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <!-- *** -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- *** -->
+    <title>Administrador</title>
+</head>
+
+<body>
+    <nav class="contenedor sticky-top ">
+        <header>
+            <div class="logo">
+                <img src="images/logo/logo.png" style="width:70%" alt="">
+                <a href="#"></a>
+            </div>
+            <nav style="display: online">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Módulos</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="arbolito1.html">Arbolito</a>
+                            <a class="dropdown-item" href="palacio.html">Palacio de Cristal</a>
+                            <a class="dropdown-item" href="daytona.html">Daytona</a>
+                            <a class="dropdown-item disabled" href="#">Restaurantoon</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item disabled" href="#">Módulo Raptor</a>
+                            <a class="dropdown-item disabled" href="#">Módulo Rancho</a>
+                            <a class="dropdown-item disabled" href="#">Módulo Molino</a>
+                            <a class="dropdown-item disabled" href="#">Módulo Reloj</a>
+                            <a class="dropdown-item disabled" href="#">Módulo Botes</a>
+                            <a class="dropdown-item disabled" href="#">Módulo Sabory 40</a>
+                            <a class="dropdown-item disabled" href="#">Módulo Sabory 3D</a>
+                            <a class="dropdown-item disabled" href="#">Módulo Pizzas</a>
+                            <a class="dropdown-item disabled" href="#">Módulo Don Burro</a>
+                            <a class="dropdown-item disabled" href="#">Carro Hot Dog Americanos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="banosurhom.html">Baños Sur Hombres</a>
+                            <a class="dropdown-item" href="banosurmuj.html">Baños Sur Mujer</a>
+                            <a class="dropdown-item disabled" href="banosurhom.html">Baños Norte Hombres</a>
+                            <a class="dropdown-item disabled" href="banosurhom.html">Baños Norte Mujer</a>
+                            <a class="dropdown-item disabled" href="banosurhom.html">Baños Centro Hombres</a>
+                            <a class="dropdown-item disabled" href="banosurhom.html">Baños Centro Mujer</a>
+                            <a class="dropdown-item disabled" href="banosurhom.html">Baños Centro Niños</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="souvenir.html">Tienda de Souvenir</a>
+                            <a class="dropdown-item" href="servcliente.html">Servicio al Cliente</a>
+                            <a class="dropdown-item" href="enfermeria.html">Enfermeria</a>
+                            <a class="dropdown-item " href="seguyvig.html">Seguridad y Vigilancia</a>
+                            <a class="dropdown-item disabled" href="banosurhom.html">Compra de Entradas Online</a>
+                            <a class="dropdown-item disabled" href="banosurhom.html">Señaletica</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="adminbd.html">Administración</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="pag_contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="pag_pizarra.html">Pizarra</a>
+                    </li>
+                </ul>
+            </nav>
+            </div>
+        </header>
+    </nav>
+    <div class="contenedor">
+        <section class="main">
+            <center>
+                <article>
+                    <div class="input-group input-group-alternative ">
+                        <span class="input-group-text" id="basic-addon1">
+                            <i class="fas fa-solid fa-database"></i>
+                        </span>
+                        <select name="nombre_bd" id="nombre_bd" type="text" class="form-control " placeholder="basedatos" data-bs-trigger="hover" data-bs-toggle="popover" title="Base de Datos" data-bs-content="Seleccione la Base de Datos que desea modificar.!" required />
+                        <option value="" selected>Seleccione Base de Datos</option>
+                        <optgroup label="Módulos de alimentación">
+                            <option value="preg_arbolito">Arbolito</option>
+                            <option disabled value="preg_hotdog">Carro Hot Dogs Americanos</option>
+                            <option value="preg_daytona">Daytona</option>
+                            <option disabled value="preg_botes">Modulo Botes</option>
+                            <option disabled value="preg_molino">Modulo Molino</option>
+                            <option disabled value="preg_pizzas">Modulo Pizzas</option>
+                            <option disabled value="preg_rancho">Modulo Rancho</option>
+                            <option disabled value="preg_raptor">Modulo Raptor</option>
+                            <option disabled value="preg_reloj">Modulo Reloj</option>
+                            <option disabled value="preg_sabory">Modulo Sabory</option>
+                            <option disabled value="preg_sabory3d">Modulo Sabory 3D</option>
+                            <option value="preg_palacio">Palacio de Cristal</option>
+                        <optgroup label="Baños">
+                            <option value="preg_banosurhom">Baños Sur Hombres</option>
+                            <option value="preg_banosurmuj">Baños Sur Mujer</option>
+                            <option disabled value="preg_banonortehom">Baños Norte Hombres</option>
+                            <option disabled value="preg_banonortemuj">Baños Norte Mujer</option>
+                            <option disabled value="preg_banocentrohom">Baños Centro Hombres</option>
+                            <option disabledvalue="preg_banocentromuj">Baños Centro Mujer</option>
+                        <optgroup label="Otros Servicios">
+                            <option value="preg_souvenir">Tienda Souvenir</option>
+                            <option value="preg_servcliente">Sevicio al Cliente</option>
+                            <option disabled value="preg_banosurmuj">Aseo Parque</option>
+                            <option disabled value="preg_banosurhom">Señaletica</option>
+                            <option value="preg_enfermeria">Enfermeria</option>
+                            <option value="preg_seguyvig">Seguridad y Vigilancia</option>
+                            <option disabled value="preg_banosurhom">Compras de entradas Online</option>
+                            </select>
+                    </div>
+                </article>
+            </center>
+        </section>
+        <aside style="display:online">
+            <button id="botonbusca" type="button" class="btn btn-primary  text-center btn-lg text-uppercase text-big mb-2" disable onclick="buscarbd()">
+                <i class="fas fa-check-circle"></i> Buscar
+            </button>
+            <button id="botoncrear" type="button" style:with=10px class="btn btn-primary text-center btn-lg text-uppercase text-big mb-2" disable onclick="crear()">
+                <i class="fas fa-check-circle"></i> Crear
+            </button>
+        </aside>
+    </div>
+    <div class="container-fluid">
+        <section id="sectioncrea" class="main" style="display:none">
+            <div class="abs-center">
+                <div class="card  alert alert-info text-center">
+                    <div class="card-header" style="color:black">
+                        Ingreso de items para Encuesta
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="input-group input-group-alternative">
+                                        <div class="col-1">
+                                            <div class="col-auto mx-2">
+                                                <input name="numero" id="inputnumero" type="text" class=" form-control " placeholder="N°" data-bs-trigger="hover" data-bs-toggle="popover" title="Número" data-bs-content="Ingrese la posicion en la que estara la prelgunta.!" required />
+                                            </div>
+                                        </div>
+                                        <input name="pregunta" id="inputpregunta" type="text" class="form-control text-capitalize" placeholder=" pregunta" data-bs-trigger="hover" data-bs-toggle="popover" title="Pregunta" data-bs-content="Ingrese la pregunta que le asignara al Módulo.!" required />
+                                        <button id="botonguarda" type="button" class="btn btn-primary btn-block btn-xs text-center text-uppercase text-big mx-2" disable onclick="guarda()">
+                                            <i class="fas fa-check-circle"></i> Guardar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <!--<p class="mb-0" style="align: center; font-size: 10px; color: black;">© 2020-2021 Santiago, Chile Ð€IMØ§¯®Ã§Iv Todos los derechos reservados.</p> !-->
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+    <section id="sectiontabla" class="main" style="display:none">
+        <div class="abs-center">
+            <div class="container-fluid">
+                <div class="card text-center">
+                    <div class="card-header" id="titulobd">
+                        Base de Datos
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <table id="tblData" data-order='[[ 10, "asc" ]]' data-page-length='1500' class="display table table-striped table-bordered" cellspacing="0" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">N°</th>
+                                                <th scope="col">Pregunta</th>
+                                                <th scope="col"><i class="fa fa-trash"> Borrar</th>
+                                                <th scope="col"><i class="fa fa-pencil"></i> Editar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tabla">
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <p class="mb-0" style="align: center; font-size: 10px; color: black;">© 2020-2021 Santiago, Chile Ð€IMØ§¯®Ã§Iv Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Optional JavaScript  -->
+    <script src="js/adminbd_app.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
